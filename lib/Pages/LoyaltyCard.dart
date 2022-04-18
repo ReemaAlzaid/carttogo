@@ -16,19 +16,19 @@ class _LoyaltyCardState extends State<LoyaltyCard> {
       children: <Widget>[
         Positioned(
           child: Container(
-            height: MediaQuery.of(context).size.height / 3.5,
+            height: 200,
+            width: 400,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(12),
-                topRight: Radius.circular(12),
-                bottomLeft: Radius.circular(12),
-                bottomRight: Radius.circular(12),
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20),
               ),
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(1),
-                  spreadRadius: 15,
-                  blurRadius: 18,
+                  //blurRadius: 18,
                   offset: Offset(0, 1), // changes position of shadow
                 ),
               ],
@@ -68,7 +68,7 @@ class _LoyaltyCardState extends State<LoyaltyCard> {
                               BoxShadow(
                                   color: Color.fromARGB(60, 77, 75, 75),
                                   offset: Offset(8, 8),
-                                  spreadRadius: 15,
+                                  spreadRadius: 5,
                                   blurRadius: 25)
                             ],
                             gradient: LinearGradient(
@@ -157,14 +157,13 @@ class _LoyaltyCardState extends State<LoyaltyCard> {
             )),
         Positioned(
             top: 17,
-            left: 160,
+            left: 186,
             child: Container(
-                width: 187.61068725585938,
-                height: 176.1857147216797,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('Image3.png'), fit: BoxFit.fitWidth),
-                ))),
+              width: 187.61068725585938,
+              height: 176.1857147216797,
+              child:
+                  Image.asset('assets/images/Image3.png', fit: BoxFit.fitWidth),
+            )),
       ],
     );
   }
