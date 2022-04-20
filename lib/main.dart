@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'Pages/LoyaltyCard.dart';
-import 'Pages/LoyaltyCard1.dart';
 import 'Pages/ShoppingCart.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -24,7 +23,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   GlobalKey<CurvedNavigationBarState> _NavKey = GlobalKey();
-  var Pages = [ShoppingCart(), CardScreen()];
+  var Pages = [ShoppingCart(), LoyaltyCard()];
   var Myindex = 0;
   var _title = ["سلة التسوق", "بطاقة الولاء"];
   @override
