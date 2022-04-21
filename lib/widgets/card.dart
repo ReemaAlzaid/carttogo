@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class CardWidget extends StatefulWidget {
   @override
@@ -11,8 +12,8 @@ class _CardWidgetState extends State<CardWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 380,
-      height: 200,
+      width: MediaQuery.of(context).size.width * 0.94,
+      height: MediaQuery.of(context).size.width * 0.51,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         gradient: LinearGradient(
@@ -31,7 +32,7 @@ class _CardWidgetState extends State<CardWidget> {
         ],
         image: DecorationImage(
             colorFilter: new ColorFilter.mode(
-                Color.fromARGB(255, 93, 90, 90).withOpacity(0.15),
+                Color.fromARGB(255, 37, 9, 179).withOpacity(0.2),
                 BlendMode.dstATop),
             image: AssetImage('assets/images/Cart21.png'),
             fit: BoxFit.fitWidth),
@@ -128,7 +129,7 @@ class _CardWidgetState extends State<CardWidget> {
                 color: Color.fromARGB(165, 255, 255, 255),
                 clipBehavior: Clip.antiAlias,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16)),
+                    borderRadius: BorderRadius.circular(10)),
                 child: Container(
                     width: 150,
                     height: 175,
@@ -137,10 +138,10 @@ class _CardWidgetState extends State<CardWidget> {
                     )))),
         Positioned(
             top: 170,
-            left: 233,
+            left: 225,
             child: Text(
-              '93289283',
-              textAlign: TextAlign.center,
+              '878SHY82YS',
+              textAlign: TextAlign.left,
               style: TextStyle(
                   color: Color.fromARGB(255, 0, 0, 0),
                   shadows: <Shadow>[
@@ -157,14 +158,17 @@ class _CardWidgetState extends State<CardWidget> {
                   height: 1),
             )),
         Positioned(
-            top: 6,
-            left: 189,
-            child: Container(
-              width: 180,
-              height: 176.1857147216797,
-              child:
-                  Image.asset('assets/images/Image3.png', fit: BoxFit.fitWidth),
-            )),
+          top: 12,
+          left: 197.5,
+          child: QrImage(
+            foregroundColor: Colors.black,
+            gapless: true,
+            embeddedImage: AssetImage('assets/images/logomini.png'),
+            data: "878SHY82YS", //ID for the card
+            version: QrVersions.auto,
+            size: 163,
+          ),
+        ),
       ],
     );
   }
@@ -183,3 +187,5 @@ class _CardWidgetState extends State<CardWidget> {
     );
   }
 }
+
+QRGenrator() {}

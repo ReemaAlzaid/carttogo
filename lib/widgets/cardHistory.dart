@@ -12,12 +12,12 @@ class _CardhistoryState extends State<Cardhistory> {
     return Card(
         shadowColor: Color.fromARGB(66, 13, 13, 13),
         elevation: 10,
-        color: Color.fromARGB(165, 255, 255, 255),
+        color: Color.fromARGB(255, 248, 245, 245),
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
         child: Container(
-          width: 359,
-          height: 326,
+      width: MediaQuery.of(context).size.width *0.94,
+      height: MediaQuery.of(context).size.width,
           padding: EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,7 +44,7 @@ class _CardhistoryState extends State<Cardhistory> {
                   'لا يوجد سجل',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: Color.fromRGBO(117, 112, 112, 1),
+                      color: Color.fromARGB(219, 100, 98, 98),
                       fontFamily: 'Roboto',
                       fontSize: 28,
                       fontWeight: FontWeight.w800,
