@@ -4,11 +4,10 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'Pages/LoyaltyCard.dart';
 import 'Pages/ShoppingCart.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:carttogo/Users/user.dart' as user;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: MyApp(),
@@ -25,29 +24,11 @@ class _MyAppState extends State<MyApp> {
   GlobalKey<CurvedNavigationBarState> _NavKey = GlobalKey();
   var Pages = [ShoppingCart(), LoyaltyCard()];
   var Myindex = 0;
-  var _title = ["سلة التسوق", "بطاقة الولاء"];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       top: false,
       child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white24,
-          title: Text(
-            _title[Myindex],
-            style: GoogleFonts.inter(
-              textStyle: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.w800,
-                //Directionality(
-                //textDirection: Text.Direction.rtl,
-                //),//Directionality
-              ),
-            ),
-          ),
-          centerTitle: true,
-          elevation: 0,
-        ),
         bottomNavigationBar: CurvedNavigationBar(
           key: _NavKey,
           items: [
